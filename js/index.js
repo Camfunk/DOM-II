@@ -16,6 +16,35 @@ const imgDown = document.querySelectorAll(".img").forEach(element => {
   });
 });
 
+//keyDown
+
+// const poof = document.querySelector("body");
+// poof.addEventListener("keydown", () => {
+//   poof.style.display = "none";
+// });
+
+const dissapear = document.querySelectorAll(".img").forEach(element => {
+  element.addEventListener("keydown", () => {
+    element.style.display = "none";
+  });
+});
+
+//keyup
+
+const keyStroke = document.querySelector("body");
+
+keyStroke.addEventListener("keyup", () => {
+  keyStroke.style.backgroundColor = "white";
+});
+
+//keydown
+
+const keyTap = document.querySelector("body");
+
+keyStroke.addEventListener("keydown", () => {
+  keyStroke.style.backgroundColor = "black";
+});
+
 //on click
 const navColor = document.querySelector(".main-navigation");
 navColor.addEventListener("click", e => {
@@ -45,4 +74,43 @@ bodyColorReturn.addEventListener("dblclick", () => {
 
 // mouseWheel
 
-//const wheel = document.querySelector("img");
+const wheel = document.querySelector("body");
+wheel.addEventListener("wheel", () => {
+  wheel.style.color = "silver";
+});
+
+//resize
+const losMap = document.querySelector(".img");
+console.log(losMap);
+window.addEventListener("resize", () => {
+  losMap.src =
+    "https://images.unsplash.com/photo-1509066380918-7487b4bb1fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1965&q=80";
+});
+
+//auxclick
+
+document.querySelectorAll(".nav").forEach(element => {
+  element.addEventListener("auxclick", () => {
+    element.style.color = "seagreen";
+    element.style.backgroundColor = "dodgerblue";
+    element.style.borderRadius = "2rem";
+  });
+});
+
+//mouseclick mousedown
+
+document.querySelectorAll("p").forEach(element => {
+  element.addEventListener("mousedown", () => {
+    element.style.color = "white";
+    element.style.backgroundColor = "black";
+    element.style.borderRadius = "1rem";
+  });
+});
+
+//prevent Default
+const stopLink = document.querySelector(".nav");
+
+stopLink.addEventListener("click", event => {
+  console.log("you get on out of here");
+  event.preventDefault();
+});
